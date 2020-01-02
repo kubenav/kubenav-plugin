@@ -1,0 +1,52 @@
+{
+  "name": "kubenav-plugin",
+  "version": "1.0.0",
+  "description": "Capacitor plugin for the kubenav app.",
+  "author": "Rico Berger",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kubenav/kubenav-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kubenav/kubenav-plugin/issues"
+  },
+  "main": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "clean": "rm -rf ./dist",
+    "watch": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@kubenav"
+  },
+  "dependencies": {
+    "@capacitor/core": "latest"
+  },
+  "devDependencies": {
+    "typescript": "^3.2.4",
+    "@capacitor/ios": "latest",
+    "@capacitor/android": "latest"
+  },
+  "files": [
+    "dist/",
+    "ios/",
+    "android/",
+    "KubenavPlugin.podspec"
+  ],
+  "keywords": [
+    "capacitor",
+    "plugin",
+    "native"
+  ],
+  "capacitor": {
+    "ios": {
+      "src": "ios"
+    },
+    "android": {
+      "src": "android"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+import { WebPlugin } from '@capacitor/core';
+import { KubenavPluginPlugin } from './definitions';
+
+export class KubenavPluginWeb extends WebPlugin implements KubenavPluginPlugin {
+  constructor() {
+    super({
+      name: 'KubenavPlugin',
+      platforms: ['web']
+    });
+  }
+
+  async request(options: { server: string, method: string, url: string, body: string, certificateAuthorityData: string, clientCertificateData: string, clientKeyData: string, token: string }): Promise<{data: string}> {
+    let response = await fetch(`${options.server}/request`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify({
+        method: options.method,
+        url: options.url,
+        body: options.body,
+        certificateAuthorityData: options.certificateAuthorityData,
+        clientCertificateData: options.clientCertificateData,
+        clientKeyData: options.clientKeyData,
+        token: options.token,
+      }),
+    });
+
+    let json = await response.json();
+
+    if (response.status >= 200 && response.status < 300) {
+      return json
+    }
+
+    throw new Error(json.error);
+  }
+}
+
+const KubenavPlugin = new KubenavPluginWeb();
+
+export { KubenavPlugin };
+
+import { registerWebPlugin } from '@capacitor/core';
+registerWebPlugin(KubenavPlugin);
