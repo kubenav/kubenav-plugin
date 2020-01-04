@@ -24,8 +24,8 @@ To use your local changes from the `kubenav-plugin` in the kubenav app change th
 
 ```diff
   "dependencies": {
--    "kubenav-plugin": "1.0.0",
-+    "kubenav-plugin": "file:../kubenav-plugin",
+-    "@kubenav/kubenav-plugin": "1.0.0",
++    "@kubenav/kubenav-plugin": "file:../kubenav-plugin",
   }
 ```
 
