@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.1](https://github.com/kubenav/kubenav-plugin/tree/1.1.1) (2020-01-08)
+
+[Full Changelog](https://github.com/kubenav/kubenav-plugin/compare/1.1.0...1.1.1)
+
+**Fixed bugs:**
+
+- Fix NPM Package [\#3](https://github.com/kubenav/kubenav-plugin/pull/3) ([ricoberger](https://github.com/ricoberger))
+
 ## [1.1.0](https://github.com/kubenav/kubenav-plugin/tree/1.1.0) (2020-01-08)
 
 [Full Changelog](https://github.com/kubenav/kubenav-plugin/compare/1.0.0...1.1.0)
