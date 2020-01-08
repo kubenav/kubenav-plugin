@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/kubenav/kubenav-plugin/tree/1.1.0) (2020-01-08)
+
+[Full Changelog](https://github.com/kubenav/kubenav-plugin/compare/1.0.0...1.1.0)
+
+**Implemented enhancements:**
+
+- Add iOS Support via Framework [\#2](https://github.com/kubenav/kubenav-plugin/pull/2) ([ricoberger](https://github.com/ricoberger))
+
+**Merged pull requests:**
+
+- Fix typo in the readme [\#1](https://github.com/kubenav/kubenav-plugin/pull/1) ([ricoberger](https://github.com/ricoberger))
+
 ## [1.0.0](https://github.com/kubenav/kubenav-plugin/tree/1.0.0) (2020-01-02)
 
 [Full Changelog](https://github.com/kubenav/kubenav-plugin/compare/66ee9f125d3053732ce0dda93a7fcdc3edda1c46...1.0.0)
