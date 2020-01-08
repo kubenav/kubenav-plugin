@@ -3,7 +3,8 @@ dist/
 node_modules/
 
 # iOS files
-Pods
+ios/Pods/*
+!ios/Pods/RequestFramework/
 Build
 xcuserdata
 

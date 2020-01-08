@@ -1,5 +1,6 @@
 import Foundation
 import Capacitor
+import Request
 
 /**
  * Please read the Capacitor iOS Plugin Development Guide
@@ -8,10 +9,27 @@ import Capacitor
 @objc(KubenavPlugin)
 public class KubenavPlugin: CAPPlugin {
     
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.success([
-            "value": value
+    @objc func request(_ call: CAPPluginCall) {
+        let method = call.getString("method") ?? ""
+        let url = call.getString("url") ?? ""
+        let body = call.getString("body") ?? ""
+        let certificateAuthorityData = call.getString("certificateAuthorityData") ?? ""
+        let clientCertificateData = call.getString("clientCertificateData") ?? ""
+        let clientKeyData = call.getString("clientKeyData") ?? ""
+        let token = call.getString("token") ?? ""
+
+        var error: NSError?
+
+        let data = RequestDo(method, url, body, certificateAuthorityData, clientCertificateData, clientKeyData, token, &error)
+
+        if error != nil {
+            call.reject(error?.localizedDescription ?? "")
+            return
+        }
+
+        call.resolve([
+            "data": data
         ])
     }
+
 }

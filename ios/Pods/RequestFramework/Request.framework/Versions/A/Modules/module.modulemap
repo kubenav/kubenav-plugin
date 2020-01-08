@@ -1,0 +1,8 @@
+framework module "Request" {
+	header "ref.h"
+    header "Request.objc.h"
+    header "Universe.objc.h"
+    header "Request.h"
+
+    export *
+}

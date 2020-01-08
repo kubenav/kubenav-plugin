@@ -10,4 +10,6 @@
     s.source_files = 'ios/Plugin/**/*.{swift,h,m,c,cc,mm,cpp}'
     s.ios.deployment_target  = '11.0'
     s.dependency 'Capacitor'
+    s.vendored_frameworks = 'ios/Pods/RequestFramework/**'
+    s.xcconfig = { 'ENABLE_BITCODE' => 'NO' }
   end
