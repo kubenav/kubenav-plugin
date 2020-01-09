@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.2](https://github.com/kubenav/kubenav-plugin/tree/1.1.2) (2020-01-09)
+
+[Full Changelog](https://github.com/kubenav/kubenav-plugin/compare/1.1.1...1.1.2)
+
+**Fixed bugs:**
+
+- Fix iOS Implementation [\#4](https://github.com/kubenav/kubenav-plugin/pull/4) ([ricoberger](https://github.com/ricoberger))
+
 ## [1.1.1](https://github.com/kubenav/kubenav-plugin/tree/1.1.1) (2020-01-08)
 
 [Full Changelog](https://github.com/kubenav/kubenav-plugin/compare/1.1.0...1.1.1)
