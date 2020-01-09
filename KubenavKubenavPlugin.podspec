@@ -1,6 +1,6 @@
 
   Pod::Spec.new do |s|
-    s.name = 'KubenavPlugin'
+    s.name = 'KubenavKubenavPlugin'
     s.version = '0.0.1'
     s.summary = 'Capacitor plugin for the kubenav app.'
     s.license = 'MIT'
