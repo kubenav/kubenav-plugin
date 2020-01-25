@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/kubenav/kubenav-plugin/tree/1.2.0) (2020-01-25)
+
+[Full Changelog](https://github.com/kubenav/kubenav-plugin/compare/1.1.3...1.2.0)
+
+**Implemented enhancements:**
+
+- Add support for basic authentication [\#6](https://github.com/kubenav/kubenav-plugin/pull/6) ([ricoberger](https://github.com/ricoberger))
+
 ## [1.1.3](https://github.com/kubenav/kubenav-plugin/tree/1.1.3) (2020-01-09)
 
 [Full Changelog](https://github.com/kubenav/kubenav-plugin/compare/1.1.2...1.1.3)
