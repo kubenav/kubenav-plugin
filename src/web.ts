@@ -9,7 +9,7 @@ export class KubenavPluginWeb extends WebPlugin implements KubenavPluginPlugin {
     });
   }
 
-  async request(options: { server: string, method: string, url: string, body: string, certificateAuthorityData: string, clientCertificateData: string, clientKeyData: string, token: string }): Promise<{data: string}> {
+  async request(options: { server: string, method: string, url: string, body: string, certificateAuthorityData: string, clientCertificateData: string, clientKeyData: string, token: string, username: string, password: string }): Promise<{data: string}> {
     let response = await fetch(`${options.server}/request`, {
       method: 'POST',
       headers: {
@@ -24,6 +24,8 @@ export class KubenavPluginWeb extends WebPlugin implements KubenavPluginPlugin {
         clientCertificateData: options.clientCertificateData,
         clientKeyData: options.clientKeyData,
         token: options.token,
+        username: options.username,
+        password: options.password,
       }),
     });
 

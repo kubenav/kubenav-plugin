@@ -20,9 +20,11 @@ public class KubenavPlugin extends Plugin {
         String clientCertificateData = call.getString("clientCertificateData");
         String clientKeyData = call.getString("clientKeyData");
         String token = call.getString("token");
+        String username = call.getString("username");
+        String password = call.getString("password");
 
         try {
-            String data = Request.do_(method, url, body, certificateAuthorityData, clientCertificateData, clientKeyData, token);
+            String data = Request.do_(method, url, body, certificateAuthorityData, clientCertificateData, clientKeyData, token, username, password);
             JSObject res = new JSObject();
             res.put("data", data);
             call.resolve(res);

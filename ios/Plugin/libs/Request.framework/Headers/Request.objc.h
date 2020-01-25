@@ -30,6 +30,6 @@
 /**
  * Do runs the given HTTP request.
  */
-FOUNDATION_EXPORT NSString* _Nonnull RequestDo(NSString* _Nullable method, NSString* _Nullable url, NSString* _Nullable body, NSString* _Nullable certificateAuthorityData, NSString* _Nullable clientCertificateData, NSString* _Nullable clientKeyData, NSString* _Nullable token, NSError* _Nullable* _Nullable error);
+FOUNDATION_EXPORT NSString* _Nonnull RequestDo(NSString* _Nullable method, NSString* _Nullable url, NSString* _Nullable body, NSString* _Nullable certificateAuthorityData, NSString* _Nullable clientCertificateData, NSString* _Nullable clientKeyData, NSString* _Nullable token, NSString* _Nullable username, NSString* _Nullable password, NSError* _Nullable* _Nullable error);
 
 #endif
