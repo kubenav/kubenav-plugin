@@ -8,7 +8,7 @@ import Request
  */
 @objc(KubenavPlugin)
 public class KubenavPlugin: CAPPlugin {
-    
+
     @objc func request(_ call: CAPPluginCall) {
         let method = call.getString("method") ?? ""
         let url = call.getString("url") ?? ""
@@ -17,10 +17,12 @@ public class KubenavPlugin: CAPPlugin {
         let clientCertificateData = call.getString("clientCertificateData") ?? ""
         let clientKeyData = call.getString("clientKeyData") ?? ""
         let token = call.getString("token") ?? ""
+        let username = call.getString("username") ?? ""
+        let password = call.getString("password") ?? ""
 
         var error: NSError?
 
-        let data = RequestDo(method, url, body, certificateAuthorityData, clientCertificateData, clientKeyData, token, &error)
+        let data = RequestDo(method, url, body, certificateAuthorityData, clientCertificateData, clientKeyData, token, username, password, &error)
 
         if error != nil {
             call.reject(error?.localizedDescription ?? "")
