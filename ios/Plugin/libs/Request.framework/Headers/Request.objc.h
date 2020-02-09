@@ -28,6 +28,17 @@
 @end
 
 /**
+ * AWSGetClusters returns all EKS clusters from AWS.
+ */
+FOUNDATION_EXPORT NSString* _Nonnull RequestAWSGetClusters(NSString* _Nullable accessKeyId, NSString* _Nullable secretAccessKey, NSString* _Nullable region, NSError* _Nullable* _Nullable error);
+
+/**
+ * AWSGetToken returns a bearer token for Kubernetes API requests.
+See: https://github.com/kubernetes-sigs/aws-iam-authenticator/blob/7547c74e660f8d34d9980f2c69aa008eed1f48d0/pkg/token/token.go#L310
+ */
+FOUNDATION_EXPORT NSString* _Nonnull RequestAWSGetToken(NSString* _Nullable accessKeyId, NSString* _Nullable secretAccessKey, NSString* _Nullable region, NSString* _Nullable clusterID, NSError* _Nullable* _Nullable error);
+
+/**
  * Do runs the given HTTP request.
  */
 FOUNDATION_EXPORT NSString* _Nonnull RequestDo(NSString* _Nullable method, NSString* _Nullable url, NSString* _Nullable body, NSString* _Nullable certificateAuthorityData, NSString* _Nullable clientCertificateData, NSString* _Nullable clientKeyData, NSString* _Nullable token, NSString* _Nullable username, NSString* _Nullable password, NSError* _Nullable* _Nullable error);

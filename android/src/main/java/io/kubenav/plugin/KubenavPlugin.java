@@ -12,6 +12,39 @@ import request.Request;
 public class KubenavPlugin extends Plugin {
 
     @PluginMethod()
+    public void awsGetClusters(PluginCall call) {
+        String accessKeyId = call.getString("accessKeyId");
+        String secretAccessKey = call.getString("secretAccessKey");
+        String region = call.getString("region");
+
+        try {
+            String data = Request.awsGetClusters(accessKeyId, secretAccessKey, region);
+            JSObject res = new JSObject();
+            res.put("data", data);
+            call.resolve(res);
+        } catch (Exception e) {
+            call.reject(e.getLocalizedMessage());
+        }
+    }
+
+    @PluginMethod()
+    public void awsGetToken(PluginCall call) {
+        String accessKeyId = call.getString("accessKeyId");
+        String secretAccessKey = call.getString("secretAccessKey");
+        String region = call.getString("region");
+        String clusterID = call.getString("clusterID");
+
+        try {
+            String data = Request.awsGetToken(accessKeyId, secretAccessKey, region, clusterID);
+            JSObject res = new JSObject();
+            res.put("data", data);
+            call.resolve(res);
+        } catch (Exception e) {
+            call.reject(e.getLocalizedMessage());
+        }
+    }
+
+    @PluginMethod()
     public void request(PluginCall call) {
         String method = call.getString("method");
         String url = call.getString("url");
@@ -32,4 +65,5 @@ public class KubenavPlugin extends Plugin {
             call.reject(e.getLocalizedMessage());
         }
     }
+
 }
