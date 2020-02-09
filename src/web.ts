@@ -10,11 +10,11 @@ export class KubenavPluginWeb extends WebPlugin implements KubenavPluginPlugin {
   }
 
   async awsGetClusters(options: { accessKeyId: string, secretAccessKey: string, region: string }): Promise<{data: string}> {
-    throw new Error('not implemented');
+    throw new Error(`This feature is not implemented for web, options: ${JSON.stringify(options)}`);
   };
 
   async awsGetToken(options: { accessKeyId: string, secretAccessKey: string, region: string, clusterID: string }): Promise<{data: string}> {
-    throw new Error('not implemented');
+    throw new Error(`This feature is not implemented for web, options: ${JSON.stringify(options)}`);
   };
 
   async request(options: { server: string, method: string, url: string, body: string, certificateAuthorityData: string, clientCertificateData: string, clientKeyData: string, token: string, username: string, password: string }): Promise<{data: string}> {
