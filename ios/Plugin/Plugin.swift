@@ -9,6 +9,45 @@ import Request
 @objc(KubenavPlugin)
 public class KubenavPlugin: CAPPlugin {
 
+    @objc func awsGetClusters(_ call: CAPPluginCall) {
+        let accessKeyId = call.getString("accessKeyId") ?? ""
+        let secretAccessKey = call.getString("secretAccessKey") ?? ""
+        let region = call.getString("region") ?? ""
+        
+        var error: NSError?
+
+        let data = RequestAWSGetClusters(accessKeyId, secretAccessKey, region, &error)
+
+        if error != nil {
+            call.reject(error?.localizedDescription ?? "")
+            return
+        }
+
+        call.resolve([
+            "data": data
+        ])
+    }
+    
+    @objc func awsGetToken(_ call: CAPPluginCall) {
+        let accessKeyId = call.getString("accessKeyId") ?? ""
+        let secretAccessKey = call.getString("secretAccessKey") ?? ""
+        let region = call.getString("region") ?? ""
+        let clusterID = call.getString("clusterID") ?? ""
+        
+        var error: NSError?
+
+        let data = RequestAWSGetToken(accessKeyId, secretAccessKey, region, clusterID, &error)
+
+        if error != nil {
+            call.reject(error?.localizedDescription ?? "")
+            return
+        }
+
+        call.resolve([
+            "data": data
+        ])
+    }
+    
     @objc func request(_ call: CAPPluginCall) {
         let method = call.getString("method") ?? ""
         let url = call.getString("url") ?? ""
