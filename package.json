@@ -1,6 +1,6 @@
 {
   "name": "kubenav-plugin",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Capacitor plugin for the kubenav app.",
   "author": "Rico Berger",
   "license": "MIT",
