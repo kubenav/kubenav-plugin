@@ -17,7 +17,7 @@ export class KubenavPluginWeb extends WebPlugin implements KubenavPluginPlugin {
     throw new Error(`This feature is not implemented for web, options: ${JSON.stringify(options)}`);
   };
 
-  async request(options: { server: string, method: string, url: string, body: string, certificateAuthorityData: string, clientCertificateData: string, clientKeyData: string, token: string, username: string, password: string }): Promise<{data: string}> {
+  async request(options: { server: string, cluster: string, method: string, url: string, body: string, certificateAuthorityData: string, clientCertificateData: string, clientKeyData: string, token: string, username: string, password: string }): Promise<{data: string}> {
     let response = await fetch(`${options.server}/request`, {
       method: 'POST',
       headers: {
@@ -25,6 +25,7 @@ export class KubenavPluginWeb extends WebPlugin implements KubenavPluginPlugin {
         'Accept': 'application/json',
       },
       body: JSON.stringify({
+        cluster: options.cluster,
         method: options.method,
         url: options.url,
         body: options.body,
