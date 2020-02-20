@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.0](https://github.com/kubenav/kubenav-plugin/tree/1.4.0) (2020-02-20)
+
+[Full Changelog](https://github.com/kubenav/kubenav-plugin/compare/1.3.1...1.4.0)
+
+**Implemented enhancements:**
+
+- Add cluster option to request function [\#9](https://github.com/kubenav/kubenav-plugin/pull/9) ([ricoberger](https://github.com/ricoberger))
+
 ## [1.3.1](https://github.com/kubenav/kubenav-plugin/tree/1.3.1) (2020-02-09)
 
 [Full Changelog](https://github.com/kubenav/kubenav-plugin/compare/1.3.0...1.3.1)
