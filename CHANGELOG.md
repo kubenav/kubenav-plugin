@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.0](https://github.com/kubenav/kubenav-plugin/tree/1.5.0) (2020-03-09)
+
+[Full Changelog](https://github.com/kubenav/kubenav-plugin/compare/1.4.0...1.5.0)
+
+**Implemented enhancements:**
+
+- Add Azure Support [\#10](https://github.com/kubenav/kubenav-plugin/pull/10) ([ricoberger](https://github.com/ricoberger))
+
 ## [1.4.0](https://github.com/kubenav/kubenav-plugin/tree/1.4.0) (2020-02-20)
 
 [Full Changelog](https://github.com/kubenav/kubenav-plugin/compare/1.3.1...1.4.0)
