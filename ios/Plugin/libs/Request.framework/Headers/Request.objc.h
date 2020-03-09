@@ -39,6 +39,11 @@ See: https://github.com/kubernetes-sigs/aws-iam-authenticator/blob/7547c74e660f8
 FOUNDATION_EXPORT NSString* _Nonnull RequestAWSGetToken(NSString* _Nullable accessKeyId, NSString* _Nullable secretAccessKey, NSString* _Nullable region, NSString* _Nullable clusterID, NSError* _Nullable* _Nullable error);
 
 /**
+ * AzureGetClusters return all Kubeconfigs for all AKS clusters for the provided subscription and resource group.
+ */
+FOUNDATION_EXPORT NSString* _Nonnull RequestAzureGetClusters(NSString* _Nullable subscriptionID, NSString* _Nullable clientID, NSString* _Nullable clientSecret, NSString* _Nullable tenantID, NSString* _Nullable resourceGroupName, BOOL admin, NSError* _Nullable* _Nullable error);
+
+/**
  * Do runs the given HTTP request.
  */
 FOUNDATION_EXPORT NSString* _Nonnull RequestDo(NSString* _Nullable method, NSString* _Nullable url, NSString* _Nullable body, NSString* _Nullable certificateAuthorityData, NSString* _Nullable clientCertificateData, NSString* _Nullable clientKeyData, NSString* _Nullable token, NSString* _Nullable username, NSString* _Nullable password, NSError* _Nullable* _Nullable error);

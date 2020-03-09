@@ -45,6 +45,26 @@ public class KubenavPlugin extends Plugin {
     }
 
     @PluginMethod()
+    public void azureGetClusters(PluginCall call) {
+        //: string, : string, : string, : string, : string, : boolean
+        String subscriptionID = call.getString("subscriptionID");
+        String clientID = call.getString("clientID");
+        String clientSecret = call.getString("clientSecret");
+        String tenantID = call.getString("tenantID");
+        String resourceGroupName = call.getString("resourceGroupName");
+        Boolean admin = call.getBoolean("admin");
+
+        try {
+            String data = Request.azureGetClusters(subscriptionID, clientID, clientSecret, tenantID, resourceGroupName, admin);
+            JSObject res = new JSObject();
+            res.put("data", data);
+            call.resolve(res);
+        } catch (Exception e) {
+            call.reject(e.getLocalizedMessage());
+        }
+    }
+
+    @PluginMethod()
     public void request(PluginCall call) {
         String method = call.getString("method");
         String url = call.getString("url");
