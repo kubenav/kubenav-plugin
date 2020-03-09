@@ -17,6 +17,10 @@ export class KubenavPluginWeb extends WebPlugin implements KubenavPluginPlugin {
     throw new Error(`This feature is not implemented for web, options: ${JSON.stringify(options)}`);
   };
 
+  async azureGetClusters(options: { subscriptionID: string, clientID: string, clientSecret: string, tenantID: string, resourceGroupName: string, admin: boolean }): Promise<{data: string}> {
+    throw new Error(`This feature is not implemented for web, options: ${JSON.stringify(options)}`);
+  };
+
   async request(options: { server: string, cluster: string, method: string, url: string, body: string, certificateAuthorityData: string, clientCertificateData: string, clientKeyData: string, token: string, username: string, password: string }): Promise<{data: string}> {
     let response = await fetch(`${options.server}/request`, {
       method: 'POST',

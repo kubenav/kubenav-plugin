@@ -48,6 +48,28 @@ public class KubenavPlugin: CAPPlugin {
         ])
     }
     
+    @objc func azureGetClusters(_ call: CAPPluginCall) {
+        let subscriptionID = call.getString("subscriptionID") ?? ""
+        let clientID = call.getString("clientID") ?? ""
+        let clientSecret = call.getString("clientSecret") ?? ""
+        let tenantID = call.getString("tenantID") ?? ""
+        let resourceGroupName = call.getString("resourceGroupName") ?? ""
+        let admin = call.getBool("admin") ?? false
+        
+        var error: NSError?
+
+        let data = RequestAzureGetClusters(subscriptionID, clientID, clientSecret, tenantID, resourceGroupName, admin, &error)
+
+        if error != nil {
+            call.reject(error?.localizedDescription ?? "")
+            return
+        }
+
+        call.resolve([
+            "data": data
+        ])
+    }
+    
     @objc func request(_ call: CAPPluginCall) {
         let method = call.getString("method") ?? ""
         let url = call.getString("url") ?? ""
