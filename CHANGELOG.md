@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.1](https://github.com/kubenav/kubenav-plugin/tree/1.5.1) (2020-03-11)
+
+[Full Changelog](https://github.com/kubenav/kubenav-plugin/compare/1.5.0...1.5.1)
+
+**Fixed bugs:**
+
+- Bump bindings to Version 1.3.1 [\#11](https://github.com/kubenav/kubenav-plugin/pull/11) ([ricoberger](https://github.com/ricoberger))
+
 ## [1.5.0](https://github.com/kubenav/kubenav-plugin/tree/1.5.0) (2020-03-09)
 
 [Full Changelog](https://github.com/kubenav/kubenav-plugin/compare/1.4.0...1.5.0)
