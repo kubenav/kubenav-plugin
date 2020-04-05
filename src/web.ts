@@ -29,7 +29,7 @@ export class KubenavPluginWeb extends WebPlugin implements KubenavPluginPlugin {
     throw new Error(`This feature is not implemented for web, options: ${JSON.stringify(options)}`);
   };
 
-  async oidcGetAccessToken(options: { discoveryURL: string, clientID: string, clientSecret: string, redirectURL: string; refreshToken: string }): Promise<{data: string}> {
+  async oidcGetAccessToken(options: { discoveryURL: string, clientID: string, clientSecret: string, redirectURL: string, refreshToken: string }): Promise<{data: string}> {
     throw new Error(`This feature is not implemented for web, options: ${JSON.stringify(options)}`);
   };
 
