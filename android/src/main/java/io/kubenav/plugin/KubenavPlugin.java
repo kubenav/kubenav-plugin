@@ -46,7 +46,6 @@ public class KubenavPlugin extends Plugin {
 
     @PluginMethod()
     public void azureGetClusters(PluginCall call) {
-        //: string, : string, : string, : string, : string, : boolean
         String subscriptionID = call.getString("subscriptionID");
         String clientID = call.getString("clientID");
         String clientSecret = call.getString("clientSecret");
@@ -56,6 +55,59 @@ public class KubenavPlugin extends Plugin {
 
         try {
             String data = Request.azureGetClusters(subscriptionID, clientID, clientSecret, tenantID, resourceGroupName, admin);
+            JSObject res = new JSObject();
+            res.put("data", data);
+            call.resolve(res);
+        } catch (Exception e) {
+            call.reject(e.getLocalizedMessage());
+        }
+    }
+
+    @PluginMethod()
+    public void oidcGetLink(PluginCall call) {
+        String discoveryURL = call.getString("discoveryURL");
+        String clientID = call.getString("clientID");
+        String clientSecret = call.getString("clientSecret");
+        String redirectURL = call.getString("redirectURL");
+
+        try {
+            String data = Request.oidcGetLink(discoveryURL, clientID, clientSecret, redirectURL);
+            JSObject res = new JSObject();
+            res.put("data", data);
+            call.resolve(res);
+        } catch (Exception e) {
+            call.reject(e.getLocalizedMessage());
+        }
+    }
+
+    @PluginMethod()
+    public void oidcGetRefreshToken(PluginCall call) {
+        String discoveryURL = call.getString("discoveryURL");
+        String clientID = call.getString("clientID");
+        String clientSecret = call.getString("clientSecret");
+        String redirectURL = call.getString("redirectURL");
+        String code = call.getString("code");
+
+        try {
+            String data = Request.oidcGetRefreshToken(discoveryURL, clientID, clientSecret, redirectURL, code);
+            JSObject res = new JSObject();
+            res.put("data", data);
+            call.resolve(res);
+        } catch (Exception e) {
+            call.reject(e.getLocalizedMessage());
+        }
+    }
+
+    @PluginMethod()
+    public void oidcGetAccessToken(PluginCall call) {
+        String discoveryURL = call.getString("discoveryURL");
+        String clientID = call.getString("clientID");
+        String clientSecret = call.getString("clientSecret");
+        String redirectURL = call.getString("redirectURL");
+        String refreshToken = call.getString("refreshToken");
+
+        try {
+            String data = Request.oidcGetAccessToken(discoveryURL, clientID, clientSecret, redirectURL, refreshToken);
             JSObject res = new JSObject();
             res.put("data", data);
             call.resolve(res);
