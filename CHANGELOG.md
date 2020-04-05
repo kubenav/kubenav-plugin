@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.0](https://github.com/kubenav/kubenav-plugin/tree/1.6.0) (2020-04-05)
+
+[Full Changelog](https://github.com/kubenav/kubenav-plugin/compare/1.5.1...1.6.0)
+
+**Implemented enhancements:**
+
+- Add support for OIDC [\#12](https://github.com/kubenav/kubenav-plugin/pull/12) ([ricoberger](https://github.com/ricoberger))
+
 ## [1.5.1](https://github.com/kubenav/kubenav-plugin/tree/1.5.1) (2020-03-11)
 
 [Full Changelog](https://github.com/kubenav/kubenav-plugin/compare/1.5.0...1.5.1)
