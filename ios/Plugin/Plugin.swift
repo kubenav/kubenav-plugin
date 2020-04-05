@@ -70,6 +70,68 @@ public class KubenavPlugin: CAPPlugin {
         ])
     }
     
+    @objc func oidcGetLink(_ call: CAPPluginCall) {
+        let discoveryURL = call.getString("discoveryURL") ?? ""
+        let clientID = call.getString("clientID") ?? ""
+        let clientSecret = call.getString("clientSecret") ?? ""
+        let redirectURL = call.getString("redirectURL") ?? ""
+        
+        var error: NSError?
+
+        let data = RequestOIDCGetLink(discoveryURL, clientID, clientSecret, redirectURL, &error)
+
+        if error != nil {
+            call.reject(error?.localizedDescription ?? "")
+            return
+        }
+
+        call.resolve([
+            "data": data
+        ])
+    }
+    
+    @objc func oidcGetRefreshToken(_ call: CAPPluginCall) {
+        let discoveryURL = call.getString("discoveryURL") ?? ""
+        let clientID = call.getString("clientID") ?? ""
+        let clientSecret = call.getString("clientSecret") ?? ""
+        let redirectURL = call.getString("redirectURL") ?? ""
+        let code = call.getString("code") ?? ""
+        
+        var error: NSError?
+
+        let data = RequestOIDCGetRefreshToken(discoveryURL, clientID, clientSecret, redirectURL, code, &error)
+
+        if error != nil {
+            call.reject(error?.localizedDescription ?? "")
+            return
+        }
+
+        call.resolve([
+            "data": data
+        ])
+    }
+    
+    @objc func oidcGetAccessToken(_ call: CAPPluginCall) {
+        let discoveryURL = call.getString("discoveryURL") ?? ""
+        let clientID = call.getString("clientID") ?? ""
+        let clientSecret = call.getString("clientSecret") ?? ""
+        let redirectURL = call.getString("redirectURL") ?? ""
+        let refreshToken = call.getString("refreshToken") ?? ""
+        
+        var error: NSError?
+
+        let data = RequestOIDCGetAccessToken(discoveryURL, clientID, clientSecret, redirectURL, refreshToken, &error)
+
+        if error != nil {
+            call.reject(error?.localizedDescription ?? "")
+            return
+        }
+
+        call.resolve([
+            "data": data
+        ])
+    }
+    
     @objc func request(_ call: CAPPluginCall) {
         let method = call.getString("method") ?? ""
         let url = call.getString("url") ?? ""

@@ -7,5 +7,8 @@ CAP_PLUGIN(KubenavPlugin, "KubenavPlugin",
            CAP_PLUGIN_METHOD(awsGetClusters, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(awsGetToken, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(azureGetClusters, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(oidcGetLink, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(oidcGetRefreshToken, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(oidcGetAccessToken, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(request, CAPPluginReturnPromise);
 )

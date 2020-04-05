@@ -48,4 +48,16 @@ FOUNDATION_EXPORT NSString* _Nonnull RequestAzureGetClusters(NSString* _Nullable
  */
 FOUNDATION_EXPORT NSString* _Nonnull RequestDo(NSString* _Nullable method, NSString* _Nullable url, NSString* _Nullable body, NSString* _Nullable certificateAuthorityData, NSString* _Nullable clientCertificateData, NSString* _Nullable clientKeyData, NSString* _Nullable token, NSString* _Nullable username, NSString* _Nullable password, NSError* _Nullable* _Nullable error);
 
+/**
+ * OIDCGetAccessToken is used to retrieve an access token from a refresh token.
+ */
+FOUNDATION_EXPORT NSString* _Nonnull RequestOIDCGetAccessToken(NSString* _Nullable discoveryURL, NSString* _Nullable clientID, NSString* _Nullable clientSecret, NSString* _Nullable redirectURL, NSString* _Nullable refreshToken, NSError* _Nullable* _Nullable error);
+
+/**
+ * OIDCGetLink returns the link for the configured OIDC provider. The Link can then be used by the user to login.
+ */
+FOUNDATION_EXPORT NSString* _Nonnull RequestOIDCGetLink(NSString* _Nullable discoveryURL, NSString* _Nullable clientID, NSString* _Nullable clientSecret, NSString* _Nullable redirectURL, NSError* _Nullable* _Nullable error);
+
+FOUNDATION_EXPORT NSString* _Nonnull RequestOIDCGetRefreshToken(NSString* _Nullable discoveryURL, NSString* _Nullable clientID, NSString* _Nullable clientSecret, NSString* _Nullable redirectURL, NSString* _Nullable code, NSError* _Nullable* _Nullable error);
+
 #endif
