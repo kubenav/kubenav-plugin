@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.1](https://github.com/kubenav/kubenav-plugin/tree/1.6.1) (2020-04-13)
+
+[Full Changelog](https://github.com/kubenav/kubenav-plugin/compare/1.6.0...1.6.1)
+
+**Fixed bugs:**
+
+- Do not use latest Capacitor version [\#13](https://github.com/kubenav/kubenav-plugin/pull/13) ([ricoberger](https://github.com/ricoberger))
+
 ## [1.6.0](https://github.com/kubenav/kubenav-plugin/tree/1.6.0) (2020-04-05)
 
 [Full Changelog](https://github.com/kubenav/kubenav-plugin/compare/1.5.1...1.6.0)
