@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.7.0](https://github.com/kubenav/kubenav-plugin/tree/1.7.0) (2020-04-22)
+
+[Full Changelog](https://github.com/kubenav/kubenav-plugin/compare/1.6.1...1.7.0)
+
+**Implemented enhancements:**
+
+- Support insecure-skip-tls-verify and timeout [\#14](https://github.com/kubenav/kubenav-plugin/pull/14) ([ricoberger](https://github.com/ricoberger))
+
 ## [1.6.1](https://github.com/kubenav/kubenav-plugin/tree/1.6.1) (2020-04-13)
 
 [Full Changelog](https://github.com/kubenav/kubenav-plugin/compare/1.6.0...1.6.1)
