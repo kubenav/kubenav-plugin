@@ -127,9 +127,11 @@ public class KubenavPlugin extends Plugin {
         String token = call.getString("token");
         String username = call.getString("username");
         String password = call.getString("password");
+        Boolean insecureSkipTLSVerify = call.getBoolean("insecureSkipTLSVerify");
+        Integer timeout = call.getInt("timeout");
 
         try {
-            String data = Request.do_(method, url, body, certificateAuthorityData, clientCertificateData, clientKeyData, token, username, password);
+            String data = Request.do_(method, url, body, certificateAuthorityData, clientCertificateData, clientKeyData, token, username, password, insecureSkipTLSVerify, timeout);
             JSObject res = new JSObject();
             res.put("data", data);
             call.resolve(res);

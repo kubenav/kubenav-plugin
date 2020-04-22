@@ -142,10 +142,12 @@ public class KubenavPlugin: CAPPlugin {
         let token = call.getString("token") ?? ""
         let username = call.getString("username") ?? ""
         let password = call.getString("password") ?? ""
+        let insecureSkipTLSVerify = call.getBool("insecureSkipTLSVerify") ?? false
+        let timeout = Int64(call.getInt("timeout") ?? 60)
 
         var error: NSError?
 
-        let data = RequestDo(method, url, body, certificateAuthorityData, clientCertificateData, clientKeyData, token, username, password, &error)
+        let data = RequestDo(method, url, body, certificateAuthorityData, clientCertificateData, clientKeyData, token, username, password, insecureSkipTLSVerify, timeout, &error)
 
         if error != nil {
             call.reject(error?.localizedDescription ?? "")
